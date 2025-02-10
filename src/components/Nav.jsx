@@ -14,6 +14,17 @@ export default function Nav() {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
 
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'unset'
+        }
+        return () => {
+            document.body.style.overflow = 'unset'
+        }
+    }, [isMenuOpen])
+
     return (
         <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ''}`}>
             <div className={styles.logo}>
@@ -28,6 +39,7 @@ export default function Nav() {
                 <span></span>
                 <span></span>
             </button>
+            {isMenuOpen && <div className={styles.overlay} onClick={() => setIsMenuOpen(false)}></div>}
             <div className={`${styles.navLinks} ${isMenuOpen ? styles.open : ''}`}>
                 <a href="#home" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
                     <span className={styles.navNumber}>01.</span>Home

@@ -8,7 +8,8 @@ const projects = [
         technologies: ["Python", "OpenCV", "Computer Vision", "Machine Learning"],
         github: "https://github.com/darcyg32/Automated-Blackjack-Card-Counting-System",
         live: null,
-        image: "/blackjack-assistant.jpg"
+        image: "/blackjack-assistant.jpg",
+        date: "2023"
     },
     {
         title: "ClubHub - University Social Platform",
@@ -16,7 +17,8 @@ const projects = [
         technologies: ["Vue.js", "Node.js", "MySQL", "HTML", "CSS", "JavaScript"],
         github: null, // University project
         live: null,
-        image: "/clubhub.jpg"
+        image: "/clubhub.jpg",
+        date: "2022"
     },
     {
         title: "Pokemon Battles",
@@ -24,7 +26,8 @@ const projects = [
         technologies: ["C++", "OOP", "Game Development"],
         github: "https://github.com/tinnamchoi/pokemon-battles",
         live: null,
-        image: "/pokemon.jpg"
+        image: "/pokemon.jpg",
+        date: "2022"
     },
     {
         title: "MATLAB Blackjack Simulator",
@@ -32,7 +35,8 @@ const projects = [
         technologies: ["MATLAB", "Software Development", "UI Design"],
         github: null,
         live: null,
-        image: "/matlab-blackjack.jpg"
+        image: "/matlab-blackjack.jpg",
+        date: "2021"
     }
 ]
 
@@ -61,6 +65,7 @@ export default function Projects() {
                             </div>
                             <div className={styles.projectContent}>
                                 <h3>{project.title}</h3>
+                                <p className={styles.date}>{project.date}</p>
                                 <p>{project.description}</p>
                                 <div className={styles.technologies}>
                                     {project.technologies.map((tech, techIndex) => (

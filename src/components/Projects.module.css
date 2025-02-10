@@ -85,7 +85,14 @@
 .projectContent h3 {
     color: var(--text-main);
     font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    color: var(--primary);
+    font-size: 0.9rem;
     margin-bottom: 1rem;
+    font-family: 'Fira Code', monospace;
 }
 
 .projectContent p {
