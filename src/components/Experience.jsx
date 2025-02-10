@@ -6,7 +6,7 @@ const experiences = [
         title: "Software Engineer",
         company: "Edgible",
         location: "Adelaide, Australia",
-        date: "2023",
+        date: "2024",
         description: [
             "Pioneered the integration of tool injection with Ollama and FastAPI, creating a novel combination that hadn't been implemented publicly before.",
             "Developed and maintained microservices using Python and FastAPI, ensuring high performance and reliability.",
@@ -19,7 +19,7 @@ const experiences = [
         title: "Software Developer",
         company: "GuardianEyes",
         location: "Adelaide, Australia",
-        date: "2023",
+        date: "2024",
         description: [
             "Led the development of an AI-powered security camera system that secured second place in the ThincLab Tech eChallenge.",
             "Implemented computer vision algorithms for real-time threat detection and analysis.",
