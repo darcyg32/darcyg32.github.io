@@ -36,7 +36,7 @@ export default function Contact() {
                     subject: formData.subject,
                     message: formData.message,
                     to_name: "Darcy", 
-                    to_email: "darcy.geyer@gmail.com"
+                    to_email: "darcylgeyer@gmail.com"
                 }
             )
 
@@ -80,7 +80,7 @@ export default function Contact() {
                         <div className={styles.contactDetails}>
                             <div className={styles.contactItem}>
                                 <FaEnvelope />
-                                <a href="mailto:darcy.geyer@gmail.com">darcy.geyer@gmail.com</a>
+                                <a href="mailto:darcylgeyer@gmail.com">darcylgeyer@gmail.com</a>
                             </div>
                             <div className={styles.contactItem}>
                                 <FaMapMarkerAlt />

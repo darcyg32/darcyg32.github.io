@@ -30,8 +30,8 @@ export default function Footer() {
                 <div className={styles.footerSection}>
                     <h3>Contact</h3>
                     <div className={styles.contactInfo}>
-                        <a href="mailto:darcy.geyer@gmail.com">
-                            <FaEnvelope /> darcy.geyer@gmail.com
+                        <a href="mailto:darcylgeyer@gmail.com">
+                            <FaEnvelope /> darcylgeyer@gmail.com
                         </a>
                         <p>Adelaide, Australia</p>
                     </div>

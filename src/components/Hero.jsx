@@ -13,7 +13,7 @@ export default function Hero() {
 
                 <article className={styles.heroDescription}>
                     <p>
-                        I'm a software engineer and recent Computer Science graduate from the University of Adelaide, 
+                        Hi! I'm a software engineer and recent Computer Science graduate from the University of Adelaide, 
                         passionate about solving complex problems and creating impactful solutions.
                     </p>
                     <p>

@@ -15,7 +15,7 @@ const skills = [
     {
         category: "AI & Machine Learning",
         icon: <FaBrain />,
-        technologies: ["Computer Vision", "Machine Learning", "Deep Learning", "Artificial Intelligence", "OpenCV"]
+        technologies: ["Computer Vision", "Machine Learning", "Deep Learning", "Artificial Intelligence", "OpenCV", "Ollama"]
     },
     {
         category: "Databases & Cloud",
@@ -25,7 +25,7 @@ const skills = [
     {
         category: "Development Tools",
         icon: <FaTools />,
-        technologies: ["Git", "GitHub", "Postman", "n8n", "Ollama"]
+        technologies: ["Git", "GitHub", "Postman", "n8n"]
     },
     {
         category: "Core Skills",
@@ -44,8 +44,8 @@ export default function About() {
                     <div className={styles.content}>
                         <div className={styles.aboutText}>
                             <p>
-                                Hello! I'm Darcy, a software engineer with a strong foundation in computer science 
-                                and a keen interest in innovative technologies. Currently completing my Bachelor's 
+                                I'm Darcy, a software engineer with a strong foundation in computer science 
+                                and a keen interest in innovative technologies. As I've recently completed my Bachelor's 
                                 degree at the University of Adelaide, I've had the opportunity to work on diverse 
                                 projects that combine theoretical knowledge with practical applications.
                             </p>
@@ -58,8 +58,8 @@ export default function About() {
                             <p>
                                 Beyond my technical work, I'm actively involved in the university's tech community. 
                                 I'm a member of the Competitive Programming Club, where I achieved a top 5 placement 
-                                in a C++ coding competition, and I contribute to Ravi's Study Program by developing 
-                                comprehensive study materials.
+                                in a C++ coding competition. I'm also a graduate member of Ravi's Study Program, where I 
+                                have developed comprehensive study materials, and I'm a member of the Computer Science Club.
                             </p>
                         </div>
                     </div>
