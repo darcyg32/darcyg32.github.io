@@ -13,7 +13,7 @@ const experiences = [
             "Collaborated with the team to implement new features and improve existing functionality.",
             "Worked in an agile environment, participating in daily stand-ups and sprint planning."
         ],
-        technologies: ["Python", "Ollama", "FastAPI", "Docker", "Docker Compose", "Google Cloud", "Postman", "n8n", "FastAPI", "Rest APIs"]
+        technologies: ["Python", "Ollama", "FastAPI", "Docker", "Docker Compose", "Google Cloud", "Postman", "n8n", "FastAPI"]
     },
     {
         title: "Software Developer",

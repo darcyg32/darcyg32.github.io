@@ -10,12 +10,12 @@ const skills = [
     {
         category: "Web Development",
         icon: <FaServer />,
-        technologies: ["HTML", "CSS", "Node.js", "Vue.js", "FastAPI", "REST APIs"]
+        technologies: ["React", "HTML", "CSS", "Node.js", "Vue.js", "FastAPI"]
     },
     {
         category: "AI & Machine Learning",
         icon: <FaBrain />,
-        technologies: ["Computer Vision", "Machine Learning", "Deep Learning", "Artificial Intelligence", "OpenCV", "Ollama"]
+        technologies: ["Ollama", "Computer Vision", "Machine Learning", "OpenCV"]
     },
     {
         category: "Databases & Cloud",
