@@ -6,7 +6,7 @@ const experiences = [
         title: "Software Engineer",
         company: "Edgible",
         location: "Adelaide, Australia",
-        date: "2024",
+        date: "Jul. 2024 - Oct. 2024",
         description: [
             "Pioneered the integration of tool injection with Ollama and FastAPI, creating a novel combination that hadn't been implemented publicly before.",
             "Developed and maintained microservices using Python and FastAPI, ensuring high performance and reliability.",
@@ -19,12 +19,12 @@ const experiences = [
         title: "Software Developer",
         company: "GuardianEyes",
         location: "Adelaide, Australia",
-        date: "2024",
+        date: "Feb. 2024 - Jun. 2024",
         description: [
-            "Led the development of an AI-powered security camera system that secured second place in the ThincLab Tech eChallenge.",
-            "Implemented computer vision algorithms for real-time threat detection and analysis.",
-            "Designed and developed the system architecture using Python and modern AI frameworks.",
-            "Collaborated with team members to optimize performance and enhance system capabilities."
+            "Modified and integrated an existing AI algorithm to analyze video and audio streams, detecting and outputting abusive speech levels in real time.",
+            "Collaborated within a team of four to design and build a web application showcasing abuse detection capabilities.",
+            "Designed and developed system architecture using Python and modern AI frameworks.",
+            "Contributed to research, pitching efforts, and secured second place in the ThincLab Tech eChallenge, winning $2000."
         ],
         technologies: ["Python", "Computer Vision", "Machine Learning", "HTML", "JavaScript"]
     }

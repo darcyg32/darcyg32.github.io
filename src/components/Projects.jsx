@@ -9,7 +9,7 @@ const projects = [
         github: "https://github.com/darcyg32/Automated-Blackjack-Card-Counting-System",
         live: null,
         icon: <FaRobot />,
-        date: "2023"
+        date: "May 2024"
     },
     {
         title: "ClubHub - University Social Platform",
@@ -18,7 +18,7 @@ const projects = [
         github: null, // University project
         live: null,
         icon: <FaUsers />,
-        date: "2022"
+        date: "May 2023 - Jun. 2023"
     },
     {
         title: "Pokemon Battles",
@@ -27,7 +27,7 @@ const projects = [
         github: "https://github.com/tinnamchoi/pokemon-battles",
         live: null,
         icon: <FaGamepad />,
-        date: "2022"
+        date: "Sep 2022 - Oct 2022"
     },
     {
         title: "MATLAB Blackjack Simulator",
@@ -36,7 +36,7 @@ const projects = [
         github: null,
         live: null,
         icon: <FaChartLine />,
-        date: "2021"
+        date: "Mar 2022 - Apr 2022"
     }
 ]
 
