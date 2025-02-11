@@ -1,5 +1,5 @@
 import styles from './Projects.module.css'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import { FaGithub, FaExternalLinkAlt, FaRobot, FaUsers, FaGamepad, FaChartLine } from 'react-icons/fa'
 
 const projects = [
     {
@@ -8,7 +8,7 @@ const projects = [
         technologies: ["Python", "OpenCV", "Computer Vision", "Machine Learning"],
         github: "https://github.com/darcyg32/Automated-Blackjack-Card-Counting-System",
         live: null,
-        image: "/blackjack-assistant.jpg",
+        icon: <FaRobot />,
         date: "2023"
     },
     {
@@ -17,7 +17,7 @@ const projects = [
         technologies: ["Vue.js", "Node.js", "MySQL", "HTML", "CSS", "JavaScript"],
         github: null, // University project
         live: null,
-        image: "/clubhub.jpg",
+        icon: <FaUsers />,
         date: "2022"
     },
     {
@@ -26,7 +26,7 @@ const projects = [
         technologies: ["C++", "OOP", "Game Development"],
         github: "https://github.com/tinnamchoi/pokemon-battles",
         live: null,
-        image: "/pokemon.jpg",
+        icon: <FaGamepad />,
         date: "2022"
     },
     {
@@ -35,7 +35,7 @@ const projects = [
         technologies: ["MATLAB", "Software Development", "UI Design"],
         github: null,
         live: null,
-        image: "/matlab-blackjack.jpg",
+        icon: <FaChartLine />,
         date: "2021"
     }
 ]
@@ -49,7 +49,9 @@ export default function Projects() {
                     {projects.map((project, index) => (
                         <article key={index} className={styles.projectCard}>
                             <div className={styles.projectImage}>
-                                <img src={project.image} alt={project.title} />
+                                <div className={styles.iconContainer}>
+                                    {project.icon}
+                                </div>
                                 <div className={styles.projectLinks}>
                                     {project.github && (
                                         <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`GitHub repository for ${project.title}`}>

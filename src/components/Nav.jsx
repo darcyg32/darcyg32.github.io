@@ -25,38 +25,46 @@ export default function Nav() {
         }
     }, [isMenuOpen])
 
+    const handleMenuToggle = () => {
+        setIsMenuOpen(!isMenuOpen)
+    }
+
+    const handleLinkClick = () => {
+        setIsMenuOpen(false)
+    }
+
     return (
         <nav className={`${styles.nav} ${isScrolled ? styles.scrolled : ''}`}>
             <div className={styles.logo}>
-                <a href="#home">DG</a>
+                <a href="#home" onClick={handleLinkClick}>DG</a>
             </div>
             <button 
                 className={`${styles.menuButton} ${isMenuOpen ? styles.open : ''}`}
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={handleMenuToggle}
                 aria-label="Toggle menu"
             >
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            {isMenuOpen && <div className={styles.overlay} onClick={() => setIsMenuOpen(false)}></div>}
+            <div className={`${styles.overlay} ${isMenuOpen ? styles.visible : ''}`} onClick={handleLinkClick}></div>
             <div className={`${styles.navLinks} ${isMenuOpen ? styles.open : ''}`}>
-                <a href="#home" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
+                <a href="#home" className={styles.navLink} onClick={handleLinkClick}>
                     <span className={styles.navNumber}>01.</span>Home
                 </a>
-                <a href="#about" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
+                <a href="#about" className={styles.navLink} onClick={handleLinkClick}>
                     <span className={styles.navNumber}>02.</span>About
                 </a>
-                <a href="#experience" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
+                <a href="#experience" className={styles.navLink} onClick={handleLinkClick}>
                     <span className={styles.navNumber}>03.</span>Experience
                 </a>
-                <a href="#skills" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
+                <a href="#skills" className={styles.navLink} onClick={handleLinkClick}>
                     <span className={styles.navNumber}>04.</span>Skills
                 </a>
-                <a href="#projects" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
+                <a href="#projects" className={styles.navLink} onClick={handleLinkClick}>
                     <span className={styles.navNumber}>05.</span>Projects
                 </a>
-                <a href="#contact" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
+                <a href="#contact" className={styles.navLink} onClick={handleLinkClick}>
                     <span className={styles.navNumber}>06.</span>Contact
                 </a>
                 <a 
@@ -64,7 +72,7 @@ export default function Nav() {
                     className={styles.resumeButton} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={handleLinkClick}
                 >
                     Resume
                 </a>

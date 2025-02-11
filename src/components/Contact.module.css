@@ -108,7 +108,16 @@
     border-radius: 4px;
     color: var(--text-main);
     font-size: 1rem;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease;
+    will-change: border-color;
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+}
+
+.formGroup textarea {
+    resize: vertical;
+    min-height: 150px;
+    max-height: 400px;
 }
 
 .formGroup input:focus,

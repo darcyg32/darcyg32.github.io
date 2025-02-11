@@ -45,6 +45,10 @@
     position: relative;
     height: 200px;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .projectImage img {
@@ -114,6 +118,19 @@
     border-radius: 15px;
     font-size: 0.9rem;
     font-family: 'Fira Code', monospace;
+}
+
+.iconContainer {
+    font-size: 4rem;
+    color: var(--primary);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+}
+
+.projectCard:hover .iconContainer {
+    transform: translateY(-5px);
+    opacity: 1;
 }
 
 @media (max-width: 768px) {
