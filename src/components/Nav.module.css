@@ -152,7 +152,7 @@
         top: 0;
         right: 0;
         bottom: 0;
-        padding: 5rem 2rem;
+        padding: 6rem 2rem 4rem 2rem;
         background-color: var(--bg-dark);
         flex-direction: column;
         width: min(75vw, 300px);
@@ -161,6 +161,9 @@
         z-index: 1100;
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
         overflow-y: auto;
+        display: flex;
+        gap: 0.75rem;
+        height: 100vh;
     }
 
     .navLinks.open {
@@ -168,21 +171,22 @@
     }
 
     .navLink {
-        font-size: 1.1rem;
-        padding: 1rem 0;
+        font-size: 1.25rem;
+        padding: 0.75rem 0;
         width: 100%;
         text-align: center;
     }
 
     .navNumber {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .resumeButton {
         width: 100%;
         text-align: center;
-        margin-top: 2rem;
-        padding: 0.8rem 1.5rem;
+        margin-top: 1.5rem;
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
     }
 
     .menuButton {
