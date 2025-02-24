@@ -9,7 +9,7 @@ const projects = [
         github: null, // In Development
         live: null,
         icon: <FaBook />,
-        date: "Feb 2024 - Present"
+        date: "Feb 2025 - Present"
     },
     {
         title: "Automated Blackjack Assistant",
