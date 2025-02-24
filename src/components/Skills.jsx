@@ -10,22 +10,22 @@ const skills = [
     {
         category: "Web Development",
         icon: <FaServer />,
-        technologies: ["React", "HTML", "CSS", "Node.js", "Vue.js", "FastAPI"]
+        technologies: ["React", "Vite", "Tailwind CSS", "Node.js", "Vue.js", "FastAPI", "REST APIs", "HTML", "CSS"]
     },
     {
         category: "AI & Machine Learning",
         icon: <FaBrain />,
-        technologies: ["Ollama", "Computer Vision", "Machine Learning", "OpenCV"]
+        technologies: ["Ollama", "Computer Vision", "Machine Learning", "OpenCV", "AI Integration"]
     },
     {
         category: "Databases & Cloud",
         icon: <FaDatabase />,
-        technologies: ["MySQL", "Google Cloud", "Docker", "Docker Compose"]
+        technologies: ["PostgreSQL", "MySQL", "Supabase", "Google Cloud", "Docker", "Docker Compose"]
     },
     {
         category: "Development Tools",
         icon: <FaTools />,
-        technologies: ["Git", "GitHub", "Postman", "n8n"]
+        technologies: ["Git", "GitHub", "Postman", "n8n", "Zustand", "JWT Authentication"]
     },
     {
         category: "Core Skills",

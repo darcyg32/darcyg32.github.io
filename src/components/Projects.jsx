@@ -1,7 +1,16 @@
 import styles from './Projects.module.css'
-import { FaGithub, FaExternalLinkAlt, FaRobot, FaUsers, FaGamepad, FaChartLine } from 'react-icons/fa'
+import { FaGithub, FaExternalLinkAlt, FaRobot, FaUsers, FaGamepad, FaChartLine, FaBook } from 'react-icons/fa'
 
 const projects = [
+    {
+        title: "ClarityLog - AI-Enhanced Journaling Platform",
+        description: "Developing an innovative journaling application that leverages AI for advanced text analysis and pattern recognition. Features include real-time auto-save, Markdown support, and local AI analysis using Ollama with a multi-prompt architecture. Implemented with modern web technologies and best practices for security and performance.",
+        technologies: ["React", "Vite", "Tailwind CSS", "PostgreSQL", "Supabase", "Node.js", "Ollama", "Zustand"],
+        github: null, // In Development
+        live: null,
+        icon: <FaBook />,
+        date: "Feb 2024 - Present"
+    },
     {
         title: "Automated Blackjack Assistant",
         description: "An innovative project implementing computer vision and machine learning to provide real-time analysis of blackjack games. Features include live card detection through camera feed, instant card recognition, and optimal betting strategy suggestions based on detected cards.",
