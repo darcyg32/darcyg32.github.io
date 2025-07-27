@@ -1,65 +1,96 @@
 .aboutSection {
-    padding: var(--section-padding) 2rem;
-    background-color: var(--bg-dark);
+  padding: var(--section-padding) 2rem;
+  background-color: var(--bg-dark);
 }
 
 .container {
-    max-width: var(--max-width);
-    margin: 0 auto;
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 .sectionTitle {
-    font-size: 2.5rem;
-    color: var(--text-main);
-    margin-bottom: 3rem;
-    text-align: center;
+  font-size: 2.5rem;
+  color: var(--text-main);
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .sectionTitle::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 4px;
-    background: var(--primary);
-    margin: 1rem auto;
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--primary);
+  margin: 1rem auto;
 }
 
 .content {
-    display: flex;
-    gap: 4rem;
-    margin-bottom: 4rem;
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 4rem;
 }
 
 .aboutText {
-    flex: 1;
+  flex: 1;
 }
 
 .aboutText p {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
 }
 
 .aboutText p:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
+}
+
+.projectLink {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+  animation: link-glow 4s ease-in-out infinite;
+}
+
+.projectLink:hover {
+  color: var(--text-main);
+  border-bottom-color: var(--primary);
+  text-shadow: 0 0 8px rgba(100, 255, 218, 0.3);
+}
+
+.projectLink:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@keyframes link-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 8px rgba(100, 255, 218, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(100, 255, 218, 0.5);
+  }
 }
 
 @media (max-width: 768px) {
-    .aboutSection {
-        padding: var(--section-padding) 1rem;
-    }
+  .aboutSection {
+    padding: var(--section-padding) 1rem;
+  }
 
-    .content {
-        flex-direction: column;
-        gap: 2rem;
-    }
+  .content {
+    flex-direction: column;
+    gap: 2rem;
+  }
 
-    .sectionTitle {
-        font-size: 2rem;
-    }
+  .sectionTitle {
+    font-size: 2rem;
+  }
 
-    .aboutText p {
-        font-size: 1rem;
-    }
-} 
+  .aboutText p {
+    font-size: 1rem;
+  }
+}
