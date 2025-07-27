@@ -14,16 +14,14 @@ const projects = [
   {
     title: "ClarityLog - AI-Enhanced Journaling Platform",
     description:
-      "Building a full-stack journaling platform that analyzes entries and extracts insights like emotion, sentiment, and recurring themes. Developed responsive UI with React 18, Vite, and Tailwind; supports autosave, Markdown, and JWT auth. Integrated Ollama-based LLM with a custom multi-prompt system for reliable local analysis. Designed efficient PostgreSQL schema (Supabase) with full-text search and JSONB indexing. Implemented scalable filtering, graph-based entry connections, and real-time updates. Emphasized data privacy with encrypted storage, RLS, and local AI processing.",
+      "Engineered a full-stack journaling platform that transforms traditional journaling by integrating AI-driven features such as sentiment analysis, emotion detection, entry type classification, and theme extraction. Implemented key functionalities including real-time autosave, Markdown support, PostgreSQL full-text search, JWT authentication, and a dynamic network view that connects entries by shared themes and relationships. Designed and implemented a multi-prompt system that split a massive prompt into six concurrent, shorter prompts, improving processing speed by an estimated 40% and reducing response formatting errors by over 99%, effectively eliminating them under all test conditions.",
     skills: [
       "React",
       "Vite",
-      "Tailwind CSS",
       "PostgreSQL",
       "Supabase",
       "Node.js",
       "Ollama",
-      "Zustand",
       "API Development",
       "JWT Authentication",
       "Large Language Models (LLM)",
@@ -65,9 +63,9 @@ const projects = [
     featured: false,
   },
   {
-    title: "ClubHub - Social Media for University Clubs",
+    title: "ClubHub - University Club Platform",
     description:
-      "Led development of a full-stack web platform connecting university clubs and students. Built dynamic club pages, event scheduling, and user profiles. Implemented Google OAuth login and real-time notifications. Developed with Vue.js, Node.js, and MySQL for a responsive and scalable architecture.",
+      "Led a team of four to design and develop a platform for university students, with the potential to connect entire student communities through club discovery and event management. Developed secure user authentication using Google-based OAuth, real-time notifications, and membership features, ensuring a seamless and secure user experience.",
     skills: ["Vue.js", "Node.js", "MySQL", "JavaScript", "API Development"],
     github: null, // University project
     live: null,
@@ -138,7 +136,21 @@ export default function Projects() {
                 </div>
               </div>
               <div className={styles.projectContent}>
-                <h3>{project.title}</h3>
+                <h3 className={styles.projectTitle}>
+                  {project.github || project.live ? (
+                    <a
+                      href={project.live || project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.projectTitleLink}
+                      aria-label={`Visit ${project.title} (opens in new tab)`}
+                    >
+                      {project.title}
+                    </a>
+                  ) : (
+                    project.title
+                  )}
+                </h3>
                 <p className={styles.date}>{project.date}</p>
                 <p>{project.description}</p>
                 <div className={styles.technologies}>

@@ -86,6 +86,25 @@
   }
 }
 
+.currentlyWorking {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(100, 255, 218, 0.1);
+  border-left: 3px solid #64ffda;
+  border-radius: 4px;
+}
+
+.currentlyWorking p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.currentlyWorking strong {
+  color: #64ffda;
+}
+
 .ctaButtons {
   display: flex;
   gap: 1.5rem;
@@ -212,5 +231,14 @@
 
   .scrollDown {
     bottom: 1rem;
+  }
+
+  .currentlyWorking {
+    margin-top: 1rem;
+    padding: 0.75rem;
+  }
+
+  .currentlyWorking p {
+    font-size: 0.9rem;
   }
 }

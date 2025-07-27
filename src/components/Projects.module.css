@@ -102,10 +102,37 @@
   padding: 1.5rem;
 }
 
-.projectContent h3 {
+.projectTitle {
   color: var(--text-main);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+}
+
+.projectTitleLink {
+  color: var(--text-main);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.projectTitleLink:hover {
+  color: var(--primary);
+  text-shadow: 0 0 8px rgba(100, 255, 218, 0.3);
+}
+
+.projectTitleLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.projectTitleLink:hover::after {
+  width: 100%;
 }
 
 .date {

@@ -12,6 +12,7 @@ const experiences = [
       "Develop custom tools and integrations spanning backend infrastructure, AI-driven assistants, and automation infrastructure.",
       "Architect scalable solutions that integrate AI capabilities with existing business workflows and systems.",
       "Collaborate with cross-functional teams to deliver innovative automation solutions that drive operational efficiency.",
+      // TODO: Add specific metrics like "Reduced processing time by X%", "Automated Y processes", "Improved efficiency by Z%"
     ],
     skills: [
       "AI Integration",
@@ -21,15 +22,14 @@ const experiences = [
     ],
   },
   {
-    title: "Software Engineer",
-    company: "Edgible",
+    title: "Software Engineer Intern",
+    company: "Edgible Pty Ltd",
     location: "Adelaide, Australia",
     date: "Jul. 2024 - Oct. 2024",
     description: [
-      "Built a tool injection framework using FastAPI, Ollama, and Python, enabling language models to call external APIs (e.g., GitHub, weather, Docker logs).",
-      "Deployed Dockerized services with Docker Compose and managed cloud infrastructure via Google Cloud Platform.",
-      "Designed and tested RESTful APIs with Postman; automated workflows using n8n.",
-      "Worked closely with Edgible's founding team in a fast-paced startup environment.",
+      "Built a tool injection system using Python, FastAPI, and Docker to extend Ollama's capabilities, allowing it to dynamically call external tools, simplifying complex tasks such as data enrichment and generating Docker Compose files from simple prompts.",
+      "Automated data enrichment workflows by integrating the system with n8n, reducing manual data retrieval time by ~60% through dynamic processing and Google Sheets output.",
+      "Enhanced deployment scalability by streamlining automation pipelines through Google Cloud Platform and n8n, optimizing performance and facilitating future system expansion.",
     ],
     skills: [
       "Python",
@@ -45,15 +45,13 @@ const experiences = [
     ],
   },
   {
-    title: "Software Developer",
-    company: "GuardianEyes",
+    title: "Software Engineer",
+    company: "GuardianEyes - AI-Powered Security Camera",
     location: "Adelaide, Australia",
     date: "Feb. 2024 - Jun. 2024",
     description: [
-      "Built an AI-powered abuse detection web app for hospitals/nursing homes using Node.js and third-party speech APIs.",
-      "Processed video and audio feeds in real-time; collaborated on research, design, and product pitching.",
-      "Designed and developed system architecture using Python and modern AI frameworks.",
-      "Achieved 2nd place and won $2,000 in the ThincLab Tech eChallenge competition.",
+      "Built an AI-powered web application using HTML and Node.js for real-time detection of abusive speech in video feeds by extracting audio from video streams and integrating a third-party speech recognition API.",
+      "Contributed to research and pitching efforts that secured 2nd place and a $2000 prize in the ThincLab Tech eChallenge, showcasing the system's scalability for deployment in nursing homes and hospitals worldwide.",
     ],
     skills: ["Python", "Node.js", "JavaScript", "API Development"],
   },

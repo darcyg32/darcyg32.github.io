@@ -37,6 +37,23 @@ export default function Hero() {
             I enjoy working across the full stack and constantly exploring new
             technologies to bring ambitious ideas to life.
           </p>
+          <div className={styles.currentlyWorking}>
+            <p>
+              <strong>Currently working on:</strong> Scaling{" "}
+              <a
+                href="https://claritylog.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.projectLink}
+                aria-label="Visit ClarityLog.app (opens in new tab)"
+              >
+                ClarityLog
+              </a>
+              's AI analysis engine, implementing advanced sentiment analysis
+              and emotion detection, and optimizing the multi-prompt system for
+              even faster processing speeds.
+            </p>
+          </div>
         </article>
 
         <div className={styles.ctaButtons}>
