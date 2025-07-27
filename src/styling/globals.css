@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap");
 
 /* Reset default styles - Removes browser default margins, padding and sets box-sizing */
 * {
@@ -10,174 +10,292 @@
 /* Base styles - Defines CSS variables for consistent theming across the site */
 :root {
   --primary: #64ffda;
-  --bg-dark: #1a1a1a;
+  --primary-dark: #4fd1c7;
+  --primary-light: #81e6d9;
+  --bg-dark: #0a0a0a;
+  --bg-darker: #050505;
+  --bg-light: #1a1a1a;
   --text-main: #ffffff;
   --text-secondary: #8892b0;
+  --text-muted: #64748b;
   --max-width: 1200px;
   --nav-height: 100px;
   --section-padding: 100px;
+  --border-radius: 12px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(100, 255, 218, 0.3);
+  --gradient-primary: linear-gradient(135deg, #64ffda 0%, #81e6d9 100%);
+  --gradient-bg: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  --gradient-text: linear-gradient(135deg, #ffffff 0%, #64ffda 100%);
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height);
+  font-size: 16px;
 }
 
 /* Body styles - Sets default font family, line height and colors for the entire site */
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: var(--bg-dark);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: var(--gradient-bg);
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography - Defines heading styles and paragraph margins */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+/* Typography - Enhanced heading styles with better hierarchy */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
   line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 
-/* Links - Styles for all anchor tags with hover effects */
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+  font-weight: 600;
+}
+
+/* Links - Enhanced styles with better hover effects */
 a {
   color: inherit;
   text-decoration: none;
+  transition: var(--transition);
 }
 
 button {
   cursor: pointer;
   border: none;
   outline: none;
+  font-family: inherit;
+  transition: var(--transition);
 }
 
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
-/* Custom scrollbar */
+/* Enhanced scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: var(--bg-darker);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 5px;
+  background: linear-gradient(
+    180deg,
+    var(--primary) 0%,
+    var(--primary-dark) 100%
+  );
+  border-radius: 4px;
+  transition: var(--transition);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #444;
+  background: linear-gradient(
+    180deg,
+    var(--primary-light) 0%,
+    var(--primary) 100%
+  );
 }
 
-/* Selection color */
+/* Enhanced selection color */
 ::selection {
-  background-color: rgba(100, 255, 218, 0.2);
-  color: var(--primary);
+  background-color: rgba(100, 255, 218, 0.3);
+  color: var(--text-main);
 }
 
-/* Container - Creates a responsive wrapper with max-width and centered content */
+::-moz-selection {
+  background-color: rgba(100, 255, 218, 0.3);
+  color: var(--text-main);
+}
+
+/* Container - Enhanced responsive wrapper */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
 
-/* Buttons - Defines common button styles and variants */
+/* Enhanced Buttons */
 .btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.375rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: var(--border-radius);
   font-weight: 600;
+  font-size: 0.95rem;
   text-align: center;
   transition: var(--transition);
   cursor: pointer;
   border: none;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  letter-spacing: 0.025em;
 }
 
-/* Primary button - Solid background with light text */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
 .btn-primary {
-  background-color: var(--primary-color);
-  color: var(--light-text);
+  background: var(--gradient-primary);
+  color: var(--bg-dark);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
-  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
 }
 
-/* Outline button - Transparent with border */
 .btn-outline {
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
+  border: 2px solid var(--primary);
+  color: var(--primary);
   background-color: transparent;
+  backdrop-filter: blur(10px);
 }
 
 .btn-outline:hover {
-  background-color: var(--primary-color);
-  color: var(--light-text);
+  background-color: rgba(100, 255, 218, 0.1);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
 }
 
-/* Cards - Styled containers with hover effects */
+/* Enhanced Cards */
 .card {
-  background-color: var(--background);
-  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
   padding: 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
   transition: var(--transition);
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-xl), var(--shadow-glow);
+  border-color: rgba(100, 255, 218, 0.2);
 }
 
-/* Grid - Responsive grid system using CSS Grid */
+/* Enhanced Grid */
 .grid {
   display: grid;
   gap: 2rem;
 }
 
-/* Responsive grid columns for different screen sizes */
+/* Responsive grid columns */
 @media (min-width: 768px) {
   .grid-2 {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .grid-3 {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .grid-4 {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* Utilities - Helper classes for common styling needs */
+/* Utilities */
 .text-center {
   text-align: center;
 }
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
 
-/* Margin utilities - Adds vertical margin */
-.my-1 { margin: 1rem 0; }
-.my-2 { margin: 2rem 0; }
-.my-3 { margin: 3rem 0; }
-.my-4 { margin: 4rem 0; }
+/* Enhanced margin utilities */
+.my-1 {
+  margin: 1rem 0;
+}
+.my-2 {
+  margin: 2rem 0;
+}
+.my-3 {
+  margin: 3rem 0;
+}
+.my-4 {
+  margin: 4rem 0;
+}
 
-/* Padding utilities - Adds vertical padding */
-.py-1 { padding: 1rem 0; }
-.py-2 { padding: 2rem 0; }
-.py-3 { padding: 3rem 0; }
-.py-4 { padding: 4rem 0; }
+/* Enhanced padding utilities */
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+.py-4 {
+  padding: 4rem 0;
+}
 
-/* Animations - Defines keyframes and animation classes */
-@keyframes fadeIn {
+/* Advanced Animations */
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -185,29 +303,150 @@ img {
   }
 }
 
-/* Fade-in animation class for elements */
-.fade-in {
-  animation: fadeIn 0.5s ease-out;
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(100, 255, 218, 0.5);
+  }
+}
+
+/* Animation classes */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+.scale-in {
+  animation: scaleIn 0.6s ease-out;
+}
+
+.slide-in-bottom {
+  animation: slideInFromBottom 0.6s ease-out;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.glow {
+  animation: glow 4s ease-in-out infinite;
+}
+
+/* Stagger animation delays */
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+
+/* Enhanced app structure */
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: var(--gradient-bg);
 }
 
 main {
   flex: 1;
 }
 
-/* Loading Animation */
+/* Enhanced Loading Animation */
 .loading {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--bg-dark);
+  background: var(--gradient-bg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,12 +454,26 @@ main {
 }
 
 .loader {
-  width: 50px;
-  height: 50px;
-  border: 3px solid var(--text-secondary);
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(100, 255, 218, 0.2);
   border-top-color: var(--primary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
+  position: relative;
+}
+
+.loader::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 @keyframes spin {
@@ -229,9 +482,45 @@ main {
   }
 }
 
-/* Section Styles */
+/* Enhanced Section Styles */
 section {
   padding: var(--section-padding) 0;
+  position: relative;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  overflow: hidden;
+}
+
+/* Seamless background - no section separators */
+section::before {
+  display: none;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 /* Responsive Adjustments */
@@ -241,7 +530,33 @@ section {
     --section-padding: 60px;
   }
 
+  .container {
+    padding: 0 1rem;
+  }
+
   section {
     padding: var(--section-padding) 1rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

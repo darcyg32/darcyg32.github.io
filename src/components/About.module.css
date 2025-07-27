@@ -1,18 +1,77 @@
 .aboutSection {
   padding: var(--section-padding) 2rem;
-  background-color: var(--bg-dark);
+  position: relative;
+}
+
+/* Animated Background Elements */
+.backgroundElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floatingElement {
+  position: absolute;
+  font-size: 2rem;
+  color: rgba(100, 255, 218, 0.1);
+  opacity: 0.3;
+  z-index: 5;
+}
+
+.floatingElement:nth-child(1) {
+  font-size: 3rem;
+  color: rgba(100, 255, 218, 0.15);
+}
+
+.floatingElement:nth-child(2) {
+  font-size: 2.5rem;
+  color: rgba(100, 255, 218, 0.12);
+}
+
+.floatingElement:nth-child(3) {
+  font-size: 2rem;
+  color: rgba(100, 255, 218, 0.1);
+}
+
+/* Animated Particles */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 3;
 }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
+  position: relative;
+  z-index: 10;
 }
 
 .sectionTitle {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   color: var(--text-main);
   margin-bottom: 3rem;
   text-align: center;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .sectionTitle::after {
@@ -20,18 +79,34 @@
   display: block;
   width: 100px;
   height: 4px;
-  background: var(--primary);
+  background: var(--gradient-primary);
   margin: 1rem auto;
+  border-radius: 2px;
+  position: relative;
+}
+
+.sectionTitle::after::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 .content {
-  display: flex;
-  gap: 4rem;
-  margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
 }
 
 .aboutText {
-  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .aboutText p {
@@ -39,58 +114,211 @@
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 1.5rem;
-}
-
-.aboutText p:last-child {
-  margin-bottom: 0;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
 .projectLink {
   color: var(--primary);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: all 0.3s ease;
-  border-bottom: 1px solid transparent;
-  animation: link-glow 4s ease-in-out infinite;
+  border-bottom: 2px solid transparent;
+  position: relative;
+  padding: 0 2px;
+}
+
+.projectLink::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.projectLink:hover::before {
+  width: 100%;
 }
 
 .projectLink:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+}
+
+/* Highlights Section */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.highlightCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.highlightCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(100, 255, 218, 0.05) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.highlightCard:hover::before {
+  opacity: 1;
+}
+
+.highlightCard:hover {
+  border-color: rgba(100, 255, 218, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(100, 255, 218, 0.2);
+}
+
+.highlightIcon {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.highlightCard:hover .highlightIcon {
+  transform: scale(1.1);
+  color: var(--primary-light);
+}
+
+.highlightCard h3 {
   color: var(--text-main);
-  border-bottom-color: var(--primary);
-  text-shadow: 0 0 8px rgba(100, 255, 218, 0.3);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
-.projectLink:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-  border-radius: 4px;
+.highlightCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 2;
 }
 
-@keyframes link-glow {
+/* Animations */
+@keyframes glow {
   0%,
   100% {
-    text-shadow: 0 0 8px rgba(100, 255, 218, 0.3);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
   }
   50% {
-    text-shadow: 0 0 15px rgba(100, 255, 218, 0.5);
+    box-shadow: 0 0 40px rgba(100, 255, 218, 0.6);
   }
 }
 
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .aboutSection {
     padding: var(--section-padding) 1rem;
-  }
-
-  .content {
-    flex-direction: column;
-    gap: 2rem;
   }
 
   .sectionTitle {
     font-size: 2rem;
   }
 
+  .content {
+    gap: 2rem;
+  }
+
   .aboutText p {
     font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .highlights {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .highlightCard {
+    padding: 1.5rem;
+  }
+
+  .highlightIcon {
+    font-size: 2.5rem;
+  }
+
+  .highlightCard h3 {
+    font-size: 1.2rem;
+  }
+
+  .highlightCard p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: 3rem 1rem;
+  }
+
+  .aboutText {
+    max-width: 100%;
+  }
+
+  .aboutText p {
+    font-size: 0.95rem;
+  }
+
+  .highlights {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .highlightCard {
+    padding: 1.25rem;
+  }
+
+  .highlightIcon {
+    font-size: 2rem;
+  }
+
+  .highlightCard h3 {
+    font-size: 1.1rem;
+  }
+
+  .highlightCard p {
+    font-size: 0.85rem;
   }
 }

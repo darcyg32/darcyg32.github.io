@@ -1,229 +1,514 @@
 .experienceSection {
-    padding: var(--section-padding) 2rem;
-    background-color: var(--bg-dark);
+  padding: var(--section-padding) 2rem;
+  position: relative;
+}
+
+/* Animated Background Elements */
+.backgroundElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floatingElement {
+  position: absolute;
+  font-size: 2rem;
+  color: rgba(100, 255, 218, 0.1);
+  opacity: 0.3;
+  z-index: 5;
+}
+
+.floatingElement:nth-child(1) {
+  font-size: 3rem;
+  color: rgba(100, 255, 218, 0.15);
+}
+
+.floatingElement:nth-child(2) {
+  font-size: 2.5rem;
+  color: rgba(100, 255, 218, 0.12);
+}
+
+.floatingElement:nth-child(3) {
+  font-size: 2rem;
+  color: rgba(100, 255, 218, 0.1);
+}
+
+/* Animated Particles */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 3;
 }
 
 .container {
-    max-width: var(--max-width);
-    margin: 0 auto;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
 }
 
 .sectionTitle {
-    font-size: 2.5rem;
-    color: var(--text-main);
-    margin-bottom: 3rem;
-    text-align: center;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--text-main);
+  margin-bottom: 3rem;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .sectionTitle::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 4px;
-    background: var(--primary);
-    margin: 1rem auto;
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: var(--gradient-primary);
+  margin: 1rem auto;
+  border-radius: 2px;
+  position: relative;
+}
+
+.sectionTitle::after::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  animation: glow 2s ease-in-out infinite alternate;
 }
 
 .timeline {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding-top: 2rem;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-    height: 100%;
-    width: 2px;
-    background: linear-gradient(180deg, 
-        rgba(100, 255, 218, 0) 0%,
-        rgba(100, 255, 218, 0.3) 10%,
-        rgba(100, 255, 218, 0.3) 90%,
-        rgba(100, 255, 218, 0) 100%
-    );
+  position: relative;
+  margin-bottom: 4rem;
 }
 
 .timelineItem {
-    position: relative;
-    width: 50%;
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
-
-.timelineItem:nth-child(odd) {
-    left: 0;
-    padding-right: 3rem;
-}
-
-.timelineItem:nth-child(even) {
-    left: 50%;
-    padding-left: 3rem;
-}
-
-.timelineItem::before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: var(--primary);
-    border-radius: 50%;
-    top: 2rem;
-    border: 4px solid var(--bg-dark);
-    box-shadow: 0 0 0 4px rgba(100, 255, 218, 0.2);
-    z-index: 1;
-    transition: all 0.3s ease;
-}
-
-.timelineItem:nth-child(odd)::before {
-    right: -10px;
-}
-
-.timelineItem:nth-child(even)::before {
-    left: -10px;
-}
-
-.timelineItem::after {
-    content: '';
-    position: absolute;
-    width: 2rem;
-    height: 2px;
-    background: rgba(100, 255, 218, 0.3);
-    top: calc(2rem + 9px);
-}
-
-.timelineItem:nth-child(odd)::after {
-    right: 0;
-}
-
-.timelineItem:nth-child(even)::after {
-    left: 0;
+  position: relative;
+  margin-bottom: 3rem;
 }
 
 .timelineContent {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 8px;
-    position: relative;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timelineContent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(100, 255, 218, 0.05) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.timelineContent:hover::before {
+  opacity: 1;
 }
 
 .timelineContent:hover {
-    transform: translateY(-5px);
-    border-color: rgba(100, 255, 218, 0.2);
-    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
+  border-color: rgba(100, 255, 218, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(100, 255, 218, 0.2);
 }
 
-.timelineItem:hover::before {
-    background: var(--bg-dark);
-    border-color: var(--primary);
-    box-shadow: 0 0 0 8px rgba(100, 255, 218, 0.1);
+.header {
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
 }
 
 .header h3 {
-    color: var(--text-main);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+  color: var(--text-main);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
 }
 
 .header h4 {
-    color: var(--primary);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+  color: var(--primary);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
 }
 
 .meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
 
 .meta span {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-family: "Fira Code", monospace;
+}
+
+.meta span svg {
+  color: var(--primary);
+  font-size: 0.8rem;
 }
 
 .description {
-    list-style: none;
-    margin-bottom: 1.5rem;
+  list-style: none;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .description li {
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-    line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+  position: relative;
+  padding-left: 1.5rem;
 }
 
 .description li::before {
-    content: '▹';
-    position: absolute;
-    left: 0;
-    color: var(--primary);
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.achievements {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.achievement {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: var(--bg-dark);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.achievement:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.achievement svg {
+  font-size: 0.7rem;
 }
 
 .technologies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 2;
 }
 
 .tech {
-    background: rgba(100, 255, 218, 0.1);
-    color: var(--primary);
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.9rem;
-    font-family: 'Fira Code', monospace;
+  background: rgba(100, 255, 218, 0.1);
+  color: var(--primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-family: "Fira Code", monospace;
+  font-weight: 500;
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  transition: all 0.3s ease;
 }
 
+.tech:hover {
+  background: rgba(100, 255, 218, 0.2);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(100, 255, 218, 0.2);
+}
+
+/* Experience Summary */
+.experienceSummary {
+  margin-top: 3rem;
+}
+
+.summaryCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(100, 255, 218, 0.2);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(100, 255, 218, 0.1);
+}
+
+.summaryCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(100, 255, 218, 0.05) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.summaryCard:hover::before {
+  opacity: 1;
+}
+
+.summaryIcon {
+  font-size: 3rem;
+  color: var(--primary);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.summaryContent {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.summaryContent h3 {
+  color: var(--text-main);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.summaryContent p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.summaryStats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.statNumber {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: "Fira Code", monospace;
+  margin-bottom: 0.25rem;
+}
+
+.statLabel {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Animations */
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(100, 255, 218, 0.6);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .experienceSection {
-        padding: var(--section-padding) 1rem;
-    }
+  .experienceSection {
+    padding: var(--section-padding) 1rem;
+  }
 
-    .timeline::before {
-        left: 20px;
-    }
+  .sectionTitle {
+    font-size: 2rem;
+  }
 
-    .timelineItem {
-        width: 100%;
-        padding: 0 0 2rem 3rem;
-    }
+  .timeline {
+    padding-left: 0;
+  }
 
-    .timelineItem:nth-child(odd),
-    .timelineItem:nth-child(even) {
-        left: 0;
-        padding-right: 0;
-        padding-left: 3rem;
-    }
+  .timelineItem {
+    padding-left: 0;
+  }
 
-    .timelineItem::before {
-        left: 11px !important;
-        right: auto !important;
-    }
+  .timelineContent {
+    padding: 1.5rem;
+  }
 
-    .timelineItem::after {
-        left: 20px !important;
-        right: auto !important;
-        width: 2rem;
-    }
+  .header h3 {
+    font-size: 1.3rem;
+  }
 
-    .meta {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
+  .header h4 {
+    font-size: 1rem;
+  }
 
-    .timelineContent:hover {
-        transform: translateY(-3px);
-    }
-} 
+  .meta {
+    gap: 1rem;
+  }
+
+  .meta span {
+    font-size: 0.85rem;
+  }
+
+  .achievements {
+    gap: 0.5rem;
+  }
+
+  .achievement {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .summaryCard {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .summaryIcon {
+    font-size: 2.5rem;
+  }
+
+  .summaryStats {
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .statNumber {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experienceSection {
+    padding: 3rem 1rem;
+  }
+
+  .timeline {
+    padding-left: 0;
+  }
+
+  .timelineItem {
+    padding-left: 0;
+  }
+
+  .timelineContent {
+    padding: 1rem;
+  }
+
+  .header h3 {
+    font-size: 1.2rem;
+  }
+
+  .meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .description li {
+    padding-left: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .achievements {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .achievement {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .summaryStats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .statNumber {
+    font-size: 1.25rem;
+  }
+}

@@ -1,5 +1,17 @@
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import styles from "./Experience.module.css";
-import { FaCalendarAlt, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaRocket,
+  FaChartLine,
+  FaTrophy,
+  FaStar,
+  FaBriefcase,
+  FaGraduationCap,
+  FaAward,
+} from "react-icons/fa";
 
 const experiences = [
   {
@@ -12,7 +24,6 @@ const experiences = [
       "Develop custom tools and integrations spanning backend infrastructure, AI-driven assistants, and automation infrastructure.",
       "Architect scalable solutions that integrate AI capabilities with existing business workflows and systems.",
       "Collaborate with cross-functional teams to deliver innovative automation solutions that drive operational efficiency.",
-      // TODO: Add specific metrics like "Reduced processing time by X%", "Automated Y processes", "Improved efficiency by Z%"
     ],
     skills: [
       "AI Integration",
@@ -20,6 +31,9 @@ const experiences = [
       "Automation Engineering",
       "API Development",
     ],
+    achievements: ["Lead Role", "AI Focus", "Scalable Solutions"],
+    icon: <FaRocket />,
+    color: "#64ffda",
   },
   {
     title: "Software Engineer Intern",
@@ -43,6 +57,13 @@ const experiences = [
       "Node.js",
       "Large Language Models (LLM)",
     ],
+    achievements: [
+      "First Internship",
+      "Tool Integration",
+      "Scalable Architecture",
+    ],
+    icon: <FaChartLine />,
+    color: "#81e6d9",
   },
   {
     title: "Software Engineer",
@@ -54,25 +75,139 @@ const experiences = [
       "Contributed to research and pitching efforts that secured 2nd place and a $2000 prize in the ThincLab Tech eChallenge, showcasing the system's scalability for deployment in nursing homes and hospitals worldwide.",
     ],
     skills: ["Python", "Node.js", "JavaScript", "API Development"],
+    achievements: ["2nd Place", "$2000 Prize", "Real-time AI"],
+    icon: <FaTrophy />,
+    color: "#4fd1c7",
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.4, 0, 0.2, 1],
+    },
+  },
+};
+
 export default function Experience() {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   return (
     <section id="experience" className={styles.experienceSection}>
-      <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>Experience</h2>
+      {/* Animated Background Elements */}
+      <div className={styles.backgroundElements}>
+        <motion.div
+          className={styles.floatingElement}
+          style={{ top: "25%", left: "12%" }}
+          animate={{ y: [-10, 10, -10] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <FaBriefcase />
+        </motion.div>
+        <motion.div
+          className={styles.floatingElement}
+          style={{ top: "55%", right: "18%" }}
+          animate={{ y: [-10, 10, -10] }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+        >
+          <FaGraduationCap />
+        </motion.div>
+        <motion.div
+          className={styles.floatingElement}
+          style={{ top: "85%", left: "25%" }}
+          animate={{ y: [-10, 10, -10] }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+        >
+          <FaAward />
+        </motion.div>
+      </div>
 
-        <div className={styles.timeline}>
+      <div className={styles.container}>
+        <motion.h2
+          className={styles.sectionTitle}
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          Experience
+        </motion.h2>
+
+        <motion.div
+          ref={ref}
+          className={styles.timeline}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
           {experiences.map((exp, index) => (
-            <div key={index} className={styles.timelineItem}>
-              <div className={styles.timelineContent}>
+            <motion.div
+              key={index}
+              className={styles.timelineItem}
+              variants={itemVariants}
+              whileHover={{
+                scale: 1.02,
+                transition: { duration: 0.3 },
+              }}
+            >
+              <motion.div
+                className={styles.timelineContent}
+                whileHover={{
+                  y: -5,
+                  transition: { duration: 0.3 },
+                }}
+              >
                 <div className={styles.header}>
-                  <h3>{exp.title}</h3>
-                  <h4>{exp.company}</h4>
+                  <motion.h3
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    {exp.title}
+                  </motion.h3>
+                  <motion.h4
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: index * 0.1 + 0.1 }}
+                    style={{ color: exp.color }}
+                  >
+                    {exp.company}
+                  </motion.h4>
                 </div>
 
-                <div className={styles.meta}>
+                <motion.div
+                  className={styles.meta}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
+                >
                   <span>
                     <FaCalendarAlt />
                     {exp.date}
@@ -81,25 +216,108 @@ export default function Experience() {
                     <FaMapMarkerAlt />
                     {exp.location}
                   </span>
-                </div>
+                </motion.div>
 
-                <ul className={styles.description}>
+                <motion.ul
+                  className={styles.description}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
+                >
                   {exp.description.map((item, itemIndex) => (
-                    <li key={itemIndex}>{item}</li>
+                    <motion.li
+                      key={itemIndex}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={inView ? { opacity: 1, x: 0 } : {}}
+                      transition={{
+                        duration: 0.4,
+                        delay: index * 0.1 + 0.4 + itemIndex * 0.1,
+                      }}
+                    >
+                      {item}
+                    </motion.li>
                   ))}
-                </ul>
+                </motion.ul>
 
-                <div className={styles.technologies}>
-                  {exp.skills.map((skill, skillIndex) => (
-                    <span key={skillIndex} className={styles.tech}>
-                      {skill}
-                    </span>
+                {/* Achievements */}
+                <motion.div
+                  className={styles.achievements}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 + 0.5 }}
+                >
+                  {exp.achievements.map((achievement, achievementIndex) => (
+                    <motion.span
+                      key={achievementIndex}
+                      className={styles.achievement}
+                      style={{ backgroundColor: exp.color }}
+                      whileHover={{ scale: 1.05 }}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={inView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{
+                        duration: 0.4,
+                        delay: index * 0.1 + 0.6 + achievementIndex * 0.1,
+                      }}
+                    >
+                      <FaStar />
+                      {achievement}
+                    </motion.span>
                   ))}
-                </div>
-              </div>
-            </div>
+                </motion.div>
+
+                <motion.div
+                  className={styles.technologies}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.1 + 0.7 }}
+                >
+                  {exp.skills.map((skill, skillIndex) => (
+                    <motion.span
+                      key={skillIndex}
+                      className={styles.tech}
+                      style={{ borderColor: exp.color }}
+                      whileHover={{
+                        scale: 1.1,
+                        backgroundColor: `${exp.color}20`,
+                      }}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={inView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{
+                        duration: 0.4,
+                        delay: index * 0.1 + 0.8 + skillIndex * 0.05,
+                      }}
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
+                </motion.div>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+      </div>
+
+      {/* Animated Particles */}
+      <div className={styles.particles}>
+        {[...Array(18)].map((_, i) => (
+          <motion.div
+            key={i}
+            className={styles.particle}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -100, 0],
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: Math.random() * 3 + 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
       </div>
     </section>
   );
