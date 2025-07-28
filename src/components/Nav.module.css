@@ -28,6 +28,21 @@
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  display: inline-block;
+}
+
+.logo a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--primary), rgba(100, 255, 218, 0.6));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 4px;
+  z-index: -1;
 }
 
 .logo a::after {
@@ -37,8 +52,12 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--gradient-primary);
+  background: var(--primary);
   transition: width 0.3s ease;
+}
+
+.logo:hover a::before {
+  opacity: 0.1;
 }
 
 .logo:hover a::after {
@@ -69,6 +88,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 0;
+  overflow: hidden;
 }
 
 .navNumber {
@@ -80,6 +100,22 @@
   transition: all 0.3s ease;
 }
 
+.navLink::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(100, 255, 218, 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
 .navLink::after {
   content: "";
   position: absolute;
@@ -87,7 +123,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background: var(--gradient-primary);
+  background: var(--primary);
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 1px;
 }
@@ -95,6 +131,10 @@
 .navLink:hover {
   color: var(--primary);
   text-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+}
+
+.navLink:hover::before {
+  left: 100%;
 }
 
 .navLink:hover::after {
@@ -107,25 +147,43 @@
 }
 
 .resumeButton {
-  padding: 0.75rem 1.5rem;
-  border: 2px solid var(--primary);
-  border-radius: 25px;
   color: var(--primary);
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  background: transparent;
+  background: rgba(100, 255, 218, 0.05);
+}
+
+.resumeButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(100, 255, 218, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
 }
 
 .resumeButton:hover {
-  color: var(--bg-dark);
-  background: var(--primary);
-  border-color: var(--primary);
-  box-shadow: 0 8px 25px rgba(100, 255, 218, 0.3);
+  background: rgba(100, 255, 218, 0.1);
+  box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
   transform: translateY(-2px);
+}
+
+.resumeButton:hover::before {
+  left: 100%;
 }
 
 .menuButton {
