@@ -168,11 +168,27 @@
 
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  justify-items: center;
+}
+
+/* When there are fewer than 3 cards, center them */
+.projectsGrid:has(.projectCard:only-child) {
+  grid-template-columns: 1fr;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.projectsGrid:has(.projectCard:nth-child(2):last-child) {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .projectCard {
+  width: 100%;
+  max-width: 400px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: var(--border-radius);
@@ -600,6 +616,19 @@
   .projectsGrid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  /* Override the :has() selectors for mobile */
+  .projectsGrid:has(.projectCard:only-child),
+  .projectsGrid:has(.projectCard:nth-child(2):last-child) {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .projectCard {
+    max-width: 100%;
   }
 
   .filterButtons {

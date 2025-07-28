@@ -75,7 +75,7 @@ const experiences = [
       "Contributed to research and pitching efforts that secured 2nd place and a $2000 prize in the ThincLab Tech eChallenge, showcasing the system's scalability for deployment in nursing homes and hospitals worldwide.",
     ],
     skills: ["Python", "Node.js", "JavaScript", "API Development"],
-    achievements: ["2nd Place", "$2000 Prize", "Real-time AI"],
+    achievements: ["2nd Place", "ThincLab", "Real-time AI"],
     icon: <FaTrophy />,
     color: "#4fd1c7",
   },

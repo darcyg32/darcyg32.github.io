@@ -12,7 +12,6 @@ import {
   FaBook,
   FaServer,
   FaTimes,
-  FaFilter,
   FaEye,
   FaFolder,
   FaCode,
@@ -41,7 +40,7 @@ const projects = [
     icon: <FaBook />,
     date: "Feb 2025 - Present",
     featured: true,
-    category: "AI/ML",
+    categories: ["AI/ML", "Web Development"],
     longDescription:
       "Engineered a full-stack journaling platform that transforms traditional journaling by integrating AI-driven features such as sentiment analysis, emotion detection, entry type classification, and theme extraction. Implemented key functionalities including real-time autosave, Markdown support, PostgreSQL full-text search, JWT authentication, and a dynamic network view that connects entries by shared themes and relationships. Designed and implemented a multi-prompt system that split a massive prompt into six concurrent, shorter prompts, improving processing speed by an estimated 40% and reducing response formatting errors by over 99%, effectively eliminating them under all test conditions.",
   },
@@ -62,7 +61,7 @@ const projects = [
     icon: <FaServer />,
     date: "Aug 2024",
     featured: false,
-    category: "AI/ML",
+    categories: ["AI/ML"],
     longDescription:
       "Built a FastAPI interface to interact with locally hosted LLMs using Ollama. Implemented endpoints for streaming, formatted, and complete JSON responses, allowing seamless integration into automation workflows. Gained organic traction with 18+ GitHub stars and 7+ forks.",
   },
@@ -77,7 +76,7 @@ const projects = [
     icon: <FaRobot />,
     date: "May 2024",
     featured: false,
-    category: "AI/ML",
+    categories: ["AI/ML"],
     longDescription:
       "Developed a real-time Blackjack assistant using Python and computer vision. Used OpenCV to detect and classify cards from a live video feed. Applied basic ML to identify card values and recommend optimal betting strategies. Delivered an educational tool for demonstrating statistical betting techniques.",
   },
@@ -91,7 +90,7 @@ const projects = [
     icon: <FaUsers />,
     date: "May 2023 - Jun. 2023",
     featured: false,
-    category: "Web Development",
+    categories: ["Web Development"],
     longDescription:
       "Led a team of four to design and develop a platform for university students, with the potential to connect entire student communities through club discovery and event management. Developed secure user authentication using Google-based OAuth, real-time notifications, and membership features, ensuring a seamless and secure user experience.",
   },
@@ -105,7 +104,7 @@ const projects = [
     icon: <FaGamepad />,
     date: "Sep 2022 - Oct 2022",
     featured: false,
-    category: "Game Development",
+    categories: ["Game Development"],
     longDescription:
       "Collaborated in a team of three to develop a text-based, turn-based Pokémon battle game. Designed enemy scaling and checkpoint progression to increase difficulty. Implemented an OOP architecture with classes for players, Pokémon, and game logic. Developed a command-line UI with strategic battle options and team selection.",
   },
@@ -119,13 +118,13 @@ const projects = [
     icon: <FaChartLine />,
     date: "Mar 2022 - Apr 2022",
     featured: false,
-    category: "Game Development",
+    categories: ["Game Development"],
     longDescription:
       "Built a command-line Blackjack simulator in MATLAB as an introduction to programming and software design. Developed user input handling and visual representation using ASCII and plotting tools. Applied core MATLAB concepts including matrices, functions, and control flow. Wrote modular, well-commented code and included a simple testing framework.",
   },
 ];
 
-const categories = ["All", "AI/ML", "Web Development", "Game Development"];
+const filters = ["All", "AI/ML", "Web Development", "Game Development"];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -177,10 +176,10 @@ export default function Projects() {
     triggerOnce: true,
   });
 
-  const filters = ["All", "AI/ML", "Web Development", "Game Development"];
-
   const filteredProjects = projects.filter((project) =>
-    selectedFilter === "All" ? true : project.category === selectedFilter
+    selectedFilter === "All"
+      ? true
+      : project.categories.some((category) => category === selectedFilter)
   );
 
   const openModal = (project) => {

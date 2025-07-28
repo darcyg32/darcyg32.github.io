@@ -8,7 +8,6 @@ import {
   FaDatabase,
   FaTools,
   FaBrain,
-  FaChartLine,
   FaLaptopCode,
   FaCogs,
   FaRocket,
@@ -78,17 +77,6 @@ const itemVariants = {
     transition: {
       duration: 0.6,
       ease: [0.4, 0, 0.2, 1],
-    },
-  },
-};
-
-const skillVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.4,
     },
   },
 };
@@ -196,44 +184,6 @@ export default function Skills() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Skills Summary */}
-        <motion.div
-          className={styles.skillsSummary}
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
-          <div className={styles.summaryCard}>
-            <div className={styles.summaryIcon}>
-              <FaChartLine />
-            </div>
-            <div className={styles.summaryContent}>
-              <h3>Technical Expertise</h3>
-              <p>
-                Passionate about building innovative solutions that combine
-                AI/ML capabilities with modern web technologies. I specialize in
-                creating scalable automation systems, full-stack applications,
-                and integrating cutting-edge AI tools to solve complex
-                real-world problems.
-              </p>
-              <div className={styles.summaryStats}>
-                <div className={styles.stat}>
-                  <span className={styles.statNumber}>1+</span>
-                  <span className={styles.statLabel}>Years Experience</span>
-                </div>
-                <div className={styles.stat}>
-                  <span className={styles.statNumber}>25+</span>
-                  <span className={styles.statLabel}>Technologies</span>
-                </div>
-                <div className={styles.stat}>
-                  <span className={styles.statNumber}>6+</span>
-                  <span className={styles.statLabel}>Projects</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </motion.div>
       </div>
 

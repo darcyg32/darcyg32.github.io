@@ -44,18 +44,6 @@ const floatingVariants = {
   },
 };
 
-const pulseVariants = {
-  animate: {
-    scale: [1, 1.05, 1],
-    opacity: [0.7, 1, 0.7],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  },
-};
-
 export default function Hero() {
   const [ref, inView] = useInView({
     threshold: 0.1,
