@@ -20,10 +20,10 @@ const experiences = [
     location: "Adelaide, South Australia, Australia",
     date: "Jun 2025 - Present",
     description: [
-      "Lead AI and automation development, designing and implementing systems that streamline operations and enhance client experiences.",
-      "Develop custom tools and integrations spanning backend infrastructure, AI-driven assistants, and automation infrastructure.",
-      "Architect scalable solutions that integrate AI capabilities with existing business workflows and systems.",
-      "Collaborate with cross-functional teams to deliver innovative automation solutions that drive operational efficiency.",
+      "Led AI and automation development, designing and implementing systems that streamlined operations and enhanced client experiences.",
+      "Developed custom tools and integrations spanning backend infrastructure, AI-driven assistants, and automation infrastructure.",
+      "Architected scalable solutions that integrated AI capabilities with existing business workflows and systems.",
+      "Collaborated with cross-functional teams to deliver innovative automation solutions that drove operational efficiency.",
     ],
     skills: [
       "AI Integration",

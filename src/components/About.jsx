@@ -129,15 +129,15 @@ export default function About() {
             </motion.p>
 
             <motion.p variants={textVariants}>
-              I currently lead AI and automation development at Olivia Jenkins
-              Consulting, where I design and implement systems that streamline
-              operations and enhance client experiences through custom tools and
-              integrations. The work spans everything from backend
+              In my most recent role, I led AI and automation development at Olivia Jenkins
+              Consulting, where I designed and implemented systems that streamlined
+              operations and enhanced client experiences through custom tools and
+              integrations. The work spanned everything from backend
               infrastructure to AI-driven assistants and no-code platforms.
             </motion.p>
 
             <motion.p variants={textVariants}>
-              I'm also building{" "}
+              I'm currently building{" "}
               <motion.a
                 href="https://claritylog.app"
                 target="_blank"
@@ -157,8 +157,8 @@ export default function About() {
 
             <motion.p variants={textVariants}>
               Previously, I worked at Edgible, contributing to the development
-              of a novel tool injection system using FastAPI and Ollama, and
-              building GuardianEyes, an AI-powered security camera platform that
+              of a novel tool injection system using FastAPI and Ollama. I also helped
+              build GuardianEyes, an AI-powered security camera platform that
               placed second in the ThincLab Tech eChallenge.
             </motion.p>
 
@@ -185,8 +185,8 @@ export default function About() {
               </div>
               <h3>AI & Automation</h3>
               <p>
-                Leading development of intelligent systems that streamline
-                operations and enhance user experiences.
+                Led the development of intelligent systems that streamlined
+                operations and enhanced user experiences.
               </p>
             </motion.div>
 
