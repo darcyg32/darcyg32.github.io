@@ -31,6 +31,7 @@ const projects = [
       "Supabase",
       "Node.js",
       "Ollama",
+      "OpenAI API",
       "API Development",
       "JWT Authentication",
       "Large Language Models (LLM)",

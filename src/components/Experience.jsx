@@ -21,7 +21,7 @@ const experiences = [
     date: "Jun 2025 - Present",
     description: [
       "Led AI and automation development, designing and implementing systems that streamlined operations and enhanced client experiences.",
-      "Developed custom tools and integrations spanning backend infrastructure, AI-driven assistants, and automation infrastructure.",
+      "Developed custom tools and integrations spanning backend infrastructure, CRMs, and automation software.",
       "Architected scalable solutions that integrated AI capabilities with existing business workflows and systems.",
       "Collaborated with cross-functional teams to deliver innovative automation solutions that drove operational efficiency.",
     ],
