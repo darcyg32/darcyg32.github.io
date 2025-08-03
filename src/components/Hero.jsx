@@ -138,9 +138,9 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 1.5 }}
           >
             I've developed scalable AI and automation systems at Olivia Jenkins
-            Consulting, built LLM tool injection capabilities at Edgible, helped build GuardianEyes 
-            (an AI security app that placed second in the ThincLab Tech eChallenge), 
-            and I'm currently solo-building{" "}
+            Consulting, built LLM tool injection capabilities at Edgible, helped
+            build GuardianEyes (an AI security app that placed second in the
+            ThincLab Tech eChallenge), and I'm currently solo-building{" "}
             <motion.a
               href="https://claritylog.app"
               target="_blank"
@@ -170,7 +170,8 @@ export default function Hero() {
             whileHover={{ scale: 1.02 }}
           >
             <p>
-              <strong>Currently working on:</strong> Scaling{" "}
+              <strong>Currently working on:</strong> Implementing
+              production-ready security measures and rate limiting for{" "}
               <motion.a
                 href="https://claritylog.app"
                 target="_blank"
@@ -181,10 +182,8 @@ export default function Hero() {
                 whileTap={{ scale: 0.95 }}
               >
                 ClarityLog
-              </motion.a>
-              's AI analysis engine, implementing advanced sentiment analysis
-              and emotion detection, and optimizing the multi-prompt system for
-              even faster processing speeds.
+              </motion.a>{" "}
+              ahead of its public launch.
             </p>
           </motion.div>
         </motion.article>
