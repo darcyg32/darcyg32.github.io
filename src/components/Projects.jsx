@@ -376,11 +376,7 @@ export default function Projects() {
                 <FaTimes />
               </button>
               <div className={styles.modalContent}>
-                {" "}
-                {/* Added modalContent div */}
                 <div className={styles.modalImage}>
-                  {" "}
-                  {/* Added modalImage div */}
                   <div className={styles.modalImagePlaceholder}>
                     <div className={styles.modalPlaceholderIcon}>
                       {selectedProject.icon}
@@ -388,8 +384,6 @@ export default function Projects() {
                   </div>
                 </div>
                 <div className={styles.modalInfo}>
-                  {" "}
-                  {/* Added modalInfo div */}
                   <h2>{selectedProject.title}</h2>
                   <p className={styles.modalDate}>{selectedProject.date}</p>
                   <p className={styles.modalDescription}>
