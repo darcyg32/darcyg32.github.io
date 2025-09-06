@@ -170,20 +170,8 @@ export default function Hero() {
             whileHover={{ scale: 1.02 }}
           >
             <p>
-              <strong>Currently working on:</strong> Implementing
-              production-ready security measures and rate limiting for{" "}
-              <motion.a
-                href="https://claritylog.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.projectLink}
-                aria-label="Visit ClarityLog.app (opens in new tab)"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                ClarityLog
-              </motion.a>{" "}
-              ahead of its public launch.
+              <strong>Currently working on:</strong> Exploring new technologies, 
+              sharpening system design skills, and strengthening my algorithmic problem-solving.
             </p>
           </motion.div>
         </motion.article>
