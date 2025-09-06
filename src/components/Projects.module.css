@@ -226,8 +226,6 @@
 }
 
 .projectCard.featured {
-  border: 2px solid rgba(100, 255, 218, 0.3);
-  box-shadow: 0 0 30px rgba(100, 255, 218, 0.1);
   position: relative;
 }
 

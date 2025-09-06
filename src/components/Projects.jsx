@@ -46,6 +46,31 @@ const projects = [
       "Engineered a full-stack journaling platform that transforms traditional journaling by integrating AI-driven features such as sentiment analysis, emotion detection, entry type classification, and theme extraction. Implemented key functionalities including real-time autosave, Markdown support, PostgreSQL full-text search, JWT authentication, and a dynamic network view that connects entries by shared themes and relationships. Designed and implemented a multi-prompt system that split a massive prompt into six concurrent, shorter prompts, improving processing speed by an estimated 40% and reducing response formatting errors by over 99%, effectively eliminating them under all test conditions.",
   },
   {
+    title: "ApiHub - Full-Stack API Aggregator",
+    description:
+      "A comprehensive full-stack demo showcasing Spring Boot backend with React frontend, aggregating external APIs for crypto prices, weather data, and jokes.",
+    skills: [
+      "Java",
+      "Spring Boot",
+      "Gradle",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "API Development",
+      "WebClient",
+      "Spring Security",
+      "JPA/H2",
+    ],
+    github: "https://github.com/darcyg32/ApiHub",
+    live: null,
+    icon: <FaServer />,
+    date: "Aug 2025 - Sep 2025",
+    featured: true,
+    categories: ["Web Development"],
+    longDescription:
+      "Developed a full-stack API aggregator to learn modern Java + React development. Built a Spring Boot 3.5 backend (Java 17) with reactive WebClient for HTTP calls, REST endpoints with validation and DTOs, Spring Security with HTTP Basic authentication, and JPA/H2 persistence. Created a React 19 + TypeScript frontend with Vite build tooling, responsive Tailwind CSS UI, and modern React patterns. Successfully integrated 3 external APIs (CoinGecko for crypto prices, Open-Meteo for weather data, and Official Joke API) with real-time data display and proper error handling.",
+  },
+  {
     title: "Ollama-FastAPI Integration Demo",
     description:
       "A powerful FastAPI wrapper for Ollama that enables seamless integration of local LLMs into production workflows with streaming and structured responses.",
