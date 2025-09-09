@@ -18,7 +18,7 @@ const experiences = [
     title: "AI & Automations Engineer",
     company: "Olivia Jenkins Consulting",
     location: "Adelaide, South Australia, Australia",
-    date: "Jun 2025 - Present",
+    date: "Jun 2025 - Aug. 2025",
     description: [
       "Led AI and automation development, designing and implementing systems that streamlined operations and enhanced client experiences.",
       "Developed custom tools and integrations spanning backend infrastructure, CRMs, and automation software.",
