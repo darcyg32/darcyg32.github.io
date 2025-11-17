@@ -124,20 +124,15 @@ export default function About() {
           <motion.div className={styles.aboutText} variants={itemVariants}>
             <motion.p variants={textVariants}>
               I'm Darcy, a software engineer with a strong foundation in
-              computer science and a passion for building thoughtful, impactful
-              software.
+              computer science and a passion for systems programming and
+              building robust, efficient software.
             </motion.p>
 
             <motion.p variants={textVariants}>
-              In my most recent role, I led AI and automation development at Olivia Jenkins
-              Consulting, where I designed and implemented systems that streamlined
-              operations and enhanced client experiences through custom tools and
-              integrations. The work spanned everything from backend
-              infrastructure to AI-driven assistants and no-code platforms.
-            </motion.p>
-
-            <motion.p variants={textVariants}>
-              I'm currently building{" "}
+              In my most recent role at Olivia Jenkins Consulting, I designed
+              and implemented systems that streamlined operations through custom
+              tools and integrations, working across backend infrastructure and
+              system architecture. I've also completed projects like{" "}
               <motion.a
                 href="https://claritylog.app"
                 target="_blank"
@@ -149,17 +144,49 @@ export default function About() {
               >
                 ClarityLog
               </motion.a>
-              , an AI-powered journaling tool that helps users reflect, organize
-              their thoughts, and gain insight from their writing. It's my most
-              technically ambitious solo project so far, and one I aim to ship
-              and grow.
+              , a full-stack journaling platform, and a concurrent task
+              scheduler in C++23 exploring modern synchronization primitives.
             </motion.p>
 
             <motion.p variants={textVariants}>
-              Previously, I worked at Edgible, contributing to the development
-              of a novel tool injection system using FastAPI and Ollama. I also helped
-              build GuardianEyes, an AI-powered security camera platform that
-              placed second in the ThincLab Tech eChallenge.
+              I love learning and am always exploring new technologies and
+              building projects. I'm actively deepening my systems engineering
+              expertise through self-directed study, working through
+              foundational texts like Effective Modern C++ and Computer Systems:
+              A Programmer's Perspective. I share my structured notes and
+              flashcards on GitHub (
+              <motion.a
+                href="https://github.com/darcyg32/effective-modern-cpp-notes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.projectLink}
+                aria-label="View Effective Modern C++ notes on GitHub (opens in new tab)"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                C++ notes
+              </motion.a>
+              ,{" "}
+              <motion.a
+                href="https://github.com/darcyg32/csapp-notes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.projectLink}
+                aria-label="View Computer Systems notes on GitHub (opens in new tab)"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                CSAPP notes
+              </motion.a>
+              ) to reinforce my understanding of modern C++ features, memory
+              models, concurrency, and low-level system design.
+            </motion.p>
+
+            <motion.p variants={textVariants}>
+              Previously, I worked at Edgible, developing a tool injection
+              system using FastAPI. I also helped build GuardianEyes, a security
+              camera platform that placed second in the ThincLab Tech
+              eChallenge.
             </motion.p>
 
             <motion.p variants={textVariants}>
@@ -183,10 +210,10 @@ export default function About() {
               <div className={styles.highlightIcon}>
                 <FaRocket />
               </div>
-              <h3>AI & Automation</h3>
+              <h3>Systems Engineering</h3>
               <p>
-                Led the development of intelligent systems that streamlined
-                operations and enhanced user experiences.
+                Building concurrent systems in C++23 and studying low-level
+                software design to create robust, efficient solutions.
               </p>
             </motion.div>
 
@@ -201,10 +228,10 @@ export default function About() {
               <div className={styles.highlightIcon}>
                 <FaLightbulb />
               </div>
-              <h3>Innovation</h3>
+              <h3>Continuous Learning</h3>
               <p>
-                Building ClarityLog, an AI-powered journaling platform that
-                revolutionizes personal reflection.
+                Deepening expertise through structured study of modern C++ and
+                computer systems fundamentals, sharing notes and insights.
               </p>
             </motion.div>
 

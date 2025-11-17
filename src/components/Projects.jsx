@@ -21,29 +21,21 @@ import {
 
 const projects = [
   {
-    title: "ClarityLog - AI-Enhanced Journaling Platform",
+    title: "Concurrent Task Scheduler (C++23)",
     description:
-      "A comprehensive AI-powered journaling platform that revolutionizes personal reflection through advanced natural language processing and sentiment analysis.",
+      "A modern C++23 thread-pool scheduler exploring concurrent programming and standard library synchronization primitives, distributing work across std::jthread workers with a minimal, dependency-free API.",
     skills: [
-      "React",
-      "Vite",
-      "PostgreSQL",
-      "Supabase",
-      "Node.js",
-      "Ollama",
-      "OpenAI API",
-      "API Development",
-      "JWT Authentication",
-      "Large Language Models (LLM)",
+      "C++",
+      "Systems Programming",
     ],
-    github: null, // In Development
-    live: "https://claritylog.app",
-    icon: <FaBook />,
-    date: "Feb 2025 - Present",
+    github: "https://github.com/darcyg32/ConcurrentTaskScheduler-Cpp23",
+    live: null,
+    icon: <FaServer />,
+    date: "Nov 2025 - Nov 2025",
     featured: true,
-    categories: ["AI/ML", "Web Development"],
+    categories: ["Systems Programming"],
     longDescription:
-      "Engineered a full-stack journaling platform that transforms traditional journaling by integrating AI-driven features such as sentiment analysis, emotion detection, entry type classification, and theme extraction. Implemented key functionalities including real-time autosave, Markdown support, PostgreSQL full-text search, JWT authentication, and a dynamic network view that connects entries by shared themes and relationships. Designed and implemented a multi-prompt system that split a massive prompt into six concurrent, shorter prompts, improving processing speed by an estimated 40% and reducing response formatting errors by over 99%, effectively eliminating them under all test conditions.",
+      "Built a modern C++23 thread-pool scheduler to explore concurrent programming and standard library synchronisation primitives. The scheduler distributes work across a fixed set of std::jthread workers with a minimal, dependency-free API. Implemented a thread-safe task queue using std::mutex and std::condition_variable for efficient worker wake-ups and coordination. Leveraged C++23 std::jthread for automatic thread joining and RAII-based resource management. Designed template-based submit() method with perfect forwarding to accept lambdas, function objects, and function pointers. Ensured graceful shutdown with atomic flags and condition variable signaling, allowing workers to drain pending tasks before termination. Focused on educational clarity with a compact implementation that demonstrates best practices for synchronization and concurrent design patterns.",
   },
   {
     title: "ApiHub - Full-Stack API Aggregator",
@@ -69,6 +61,31 @@ const projects = [
     categories: ["Web Development"],
     longDescription:
       "Developed a full-stack API aggregator to learn modern Java + React development. Built a Spring Boot 3.5 backend (Java 17) with reactive WebClient for HTTP calls, REST endpoints with validation and DTOs, Spring Security with HTTP Basic authentication, and JPA/H2 persistence. Created a React 19 + TypeScript frontend with Vite build tooling, responsive Tailwind CSS UI, and modern React patterns. Successfully integrated 3 external APIs (CoinGecko for crypto prices, Open-Meteo for weather data, and Official Joke API) with real-time data display and proper error handling.",
+  },
+  {
+    title: "ClarityLog - AI-Enhanced Journaling Platform",
+    description:
+      "A comprehensive AI-powered journaling platform that revolutionizes personal reflection through advanced natural language processing and sentiment analysis.",
+    skills: [
+      "React",
+      "Vite",
+      "PostgreSQL",
+      "Supabase",
+      "Node.js",
+      "Ollama",
+      "OpenAI API",
+      "API Development",
+      "JWT Authentication",
+      "Large Language Models (LLM)",
+    ],
+    github: null, // In Development
+    live: "https://claritylog.app",
+    icon: <FaBook />,
+    date: "Feb 2025 - Aug 2025",
+    featured: true,
+    categories: ["AI/ML", "Web Development"],
+    longDescription:
+      "Engineered a full-stack journaling platform that transforms traditional journaling by integrating AI-driven features such as sentiment analysis, emotion detection, entry type classification, and theme extraction. Implemented key functionalities including real-time autosave, Markdown support, PostgreSQL full-text search, JWT authentication, and a dynamic network view that connects entries by shared themes and relationships. Designed and implemented a multi-prompt system that split a massive prompt into six concurrent, shorter prompts, improving processing speed by an estimated 40% and reducing response formatting errors by over 99%, effectively eliminating them under all test conditions.",
   },
   {
     title: "Ollama-FastAPI Integration Demo",
@@ -150,7 +167,7 @@ const projects = [
   },
 ];
 
-const filters = ["All", "AI/ML", "Web Development", "Game Development"];
+const filters = ["All", "Systems Programming", "AI/ML", "Web Development", "Game Development"];
 
 const containerVariants = {
   hidden: { opacity: 0 },
