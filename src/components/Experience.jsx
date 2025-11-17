@@ -43,7 +43,7 @@ const experiences = [
     description: [
       "Built a tool injection system using Python, FastAPI, and Docker to extend Ollama's capabilities, allowing it to dynamically call external tools, simplifying complex tasks such as data enrichment and generating Docker Compose files from simple prompts.",
       "Automated data enrichment workflows by integrating the system with n8n, reducing manual data retrieval time by ~60% through dynamic processing and Google Sheets output.",
-      "Enhanced deployment scalability by streamlining automation pipelines through Google Cloud Platform and n8n, optimizing performance and facilitating future system expansion.",
+      "Enhanced deployment scalability by streamlining automation pipelines through Google Cloud Platform and n8n, optimising performance and facilitating future system expansion.",
     ],
     skills: [
       "Python",

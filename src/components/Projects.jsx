@@ -24,10 +24,7 @@ const projects = [
     title: "Concurrent Task Scheduler (C++23)",
     description:
       "A modern C++23 thread-pool scheduler exploring concurrent programming and standard library synchronization primitives, distributing work across std::jthread workers with a minimal, dependency-free API.",
-    skills: [
-      "C++",
-      "Systems Programming",
-    ],
+    skills: ["C++", "Systems Programming"],
     github: "https://github.com/darcyg32/ConcurrentTaskScheduler-Cpp23",
     live: null,
     icon: <FaServer />,
@@ -126,7 +123,7 @@ const projects = [
   {
     title: "ClubHub - University Club Platform",
     description:
-      "A comprehensive university club management platform that streamlines student organization and event coordination through modern web technologies.",
+      "A comprehensive university club management platform that streamlines student organisation and event coordination through modern web technologies.",
     skills: ["Vue.js", "Node.js", "MySQL", "JavaScript", "API Development"],
     github: null, // University project
     live: null,
@@ -167,7 +164,13 @@ const projects = [
   },
 ];
 
-const filters = ["All", "Systems Programming", "AI/ML", "Web Development", "Game Development"];
+const filters = [
+  "All",
+  "Systems Programming",
+  "AI/ML",
+  "Web Development",
+  "Game Development",
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
