@@ -92,6 +92,7 @@ const skills = [
       "Postman",
       "n8n",
       "Gradle",
+      "Cargo",
       "Spring Security",
     ],
     color: "#2c7a7b",

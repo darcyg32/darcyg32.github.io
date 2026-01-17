@@ -9,6 +9,7 @@ import {
   FaUser,
   FaGraduationCap,
   FaHeart,
+  FaServer,
 } from "react-icons/fa";
 
 const containerVariants = {
@@ -123,16 +124,30 @@ export default function About() {
         >
           <motion.div className={styles.aboutText} variants={itemVariants}>
             <motion.p variants={textVariants}>
-              I'm Darcy, a software engineer with a strong foundation in
-              computer science and a passion for systems programming and
-              building robust, efficient software.
+              I'm a Graduate Software Engineer based in Adelaide, with a Bachelor of 
+              Computer Science from the University of Adelaide. I love building software 
+              that solves real problems and makes a difference.
             </motion.p>
 
             <motion.p variants={textVariants}>
-              In my most recent role at Olivia Jenkins Consulting, I designed
-              and implemented systems that streamlined operations through custom
-              tools and integrations, working across backend infrastructure and
-              system architecture. I've also completed projects like{" "}
+              Most recently, I worked at Olivia Jenkins Consulting as an AI & Automations 
+              Engineer, where I designed and built scalable solutions that streamlined 
+              operations and integrated with existing business workflows. I developed custom 
+              tools and integrations across backend infrastructure, CRMs, and third-party 
+              systems.
+            </motion.p>
+
+            <motion.p variants={textVariants}>
+              Previously, I interned at Edgible, where I built a tool injection framework 
+              using FastAPI, Ollama, and Python that enabled language models to call 
+              external APIs. I also worked on GuardianEyes, an AI-powered security app 
+              that placed 2nd in the ThincLab Tech eChallenge.
+            </motion.p>
+
+            <motion.p variants={textVariants}>
+              When I'm not working, I enjoy building personal projects to explore new 
+              technologies. I've built things from concurrent task schedulers in C++23, to 
+              image analysis tools in Rust, to full-stack platforms like{" "}
               <motion.a
                 href="https://claritylog.app"
                 target="_blank"
@@ -144,56 +159,8 @@ export default function About() {
               >
                 ClarityLog
               </motion.a>
-              , a full-stack journaling platform, and a concurrent task
-              scheduler in C++23 exploring modern synchronization primitives.
-            </motion.p>
-
-            <motion.p variants={textVariants}>
-              I love learning and am always exploring new technologies and
-              building projects. I'm actively deepening my systems engineering
-              expertise through self-directed study, working through
-              foundational texts like Effective Modern C++ and Computer Systems:
-              A Programmer's Perspective. I share my structured notes and
-              flashcards on GitHub (
-              <motion.a
-                href="https://github.com/darcyg32/effective-modern-cpp-notes"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.projectLink}
-                aria-label="View Effective Modern C++ notes on GitHub (opens in new tab)"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                C++ notes
-              </motion.a>
-              ,{" "}
-              <motion.a
-                href="https://github.com/darcyg32/csapp-notes"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.projectLink}
-                aria-label="View Computer Systems notes on GitHub (opens in new tab)"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                CSAPP notes
-              </motion.a>
-              ) to reinforce my understanding of modern C++ features, memory
-              models, concurrency, and low-level system design.
-            </motion.p>
-
-            <motion.p variants={textVariants}>
-              Previously, I worked at Edgible, developing a tool injection
-              system using FastAPI. I also helped build GuardianEyes, a security
-              camera platform that placed second in the ThincLab Tech
-              eChallenge.
-            </motion.p>
-
-            <motion.p variants={textVariants}>
-              Outside of work, I've been involved in the University of
-              Adelaide's tech community, competing in coding competitions,
-              contributing to peer learning programs, and staying active in
-              developer clubs.
+              {" "}, an AI-enhanced journaling platform. I'm always learning and always 
+              looking for the next interesting problem to solve.
             </motion.p>
           </motion.div>
 
@@ -208,12 +175,32 @@ export default function About() {
               }}
             >
               <div className={styles.highlightIcon}>
-                <FaRocket />
+                <FaCode />
               </div>
               <h3>Systems Engineering</h3>
               <p>
-                Building concurrent systems in C++23 and studying low-level
-                software design to create robust, efficient solutions.
+                Built concurrent systems and low-level software in C++23 and Rust, 
+                including thread-pool schedulers and image analysis tools that explore 
+                systems programming fundamentals.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className={styles.highlightCard}
+              variants={highlightVariants}
+              whileHover={{
+                y: -10,
+                transition: { duration: 0.3 },
+              }}
+            >
+              <div className={styles.highlightIcon}>
+                <FaServer />
+              </div>
+              <h3>Backend Systems</h3>
+              <p>
+                Designed and implemented production APIs, microservices, and automated 
+                workflows that solve real business problems and integrate seamlessly 
+                with existing systems.
               </p>
             </motion.div>
 
@@ -230,8 +217,8 @@ export default function About() {
               </div>
               <h3>Continuous Learning</h3>
               <p>
-                Deepening expertise through structured study of modern C++ and
-                computer systems fundamentals, sharing notes and insights.
+                Always exploring new technologies and building projects to deepen my 
+                understanding and tackle interesting problems.
               </p>
             </motion.div>
 
@@ -246,28 +233,11 @@ export default function About() {
               <div className={styles.highlightIcon}>
                 <FaUsers />
               </div>
-              <h3>Community</h3>
+              <h3>Collaboration</h3>
               <p>
-                Active involvement in university tech community, coding
-                competitions, and peer learning programs.
-              </p>
-            </motion.div>
-
-            <motion.div
-              className={styles.highlightCard}
-              variants={highlightVariants}
-              whileHover={{
-                y: -10,
-                transition: { duration: 0.3 },
-              }}
-            >
-              <div className={styles.highlightIcon}>
-                <FaCode />
-              </div>
-              <h3>Full-Stack</h3>
-              <p>
-                Proficient across the entire development stack, from frontend
-                interfaces to backend infrastructure.
+                Worked closely with cross-functional teams to deliver robust solutions, 
+                from collaborating with founders in fast-paced startups to partnering 
+                with stakeholders on system architecture.
               </p>
             </motion.div>
           </motion.div>

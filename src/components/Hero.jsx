@@ -90,19 +90,11 @@ export default function Hero() {
         animate={inView ? "visible" : "hidden"}
       >
         <motion.div className={styles.introText} variants={itemVariants}>
-          <motion.p
-            className={styles.greeting}
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-          >
-            Hi, my name is
-          </motion.p>
           <motion.h1
             className={styles.name}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.7 }}
+            transition={{ duration: 1, delay: 0.5 }}
           >
             Darcy Geyer
           </motion.h1>
@@ -110,9 +102,9 @@ export default function Hero() {
             className={styles.title}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
           >
-            Software Engineer
+            Graduate Software Engineer
           </motion.h2>
         </motion.div>
 
@@ -121,87 +113,25 @@ export default function Hero() {
           variants={itemVariants}
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.1 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
         >
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.1 }}
+          >
+            Hi! I'm a software engineer passionate about programming and building robust, 
+            efficient software. I've built production systems in consulting and startup 
+            environments, from backend infrastructure to full-stack platforms.
+          </motion.p>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.3 }}
           >
-            Hi! I'm a software engineer and Computer Science graduate from the
-            University of Adelaide, passionate about systems programming and 
-            building robust, efficient software.
+            I enjoy continuous learning and tackling meaningful projects. Always keen to 
+            grow and collaborate!
           </motion.p>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.5 }}
-          >
-            I've worked on scalable systems at Olivia Jenkins Consulting, built 
-            tool injection capabilities at Edgible, and helped develop GuardianEyes 
-            (a security app that placed second in the ThincLab Tech eChallenge). 
-            I've also completed projects like{" "}
-            <motion.a
-              href="https://claritylog.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.projectLink}
-              aria-label="Visit ClarityLog.app (opens in new tab)"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              ClarityLog
-            </motion.a>
-            , a full-stack journaling platform.
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.7 }}
-          >
-            I love learning and am always exploring new technologies and building 
-            projects. I'm currently deepening my systems engineering expertise through 
-            self-directed study, working through foundational texts like Effective 
-            Modern C++ and Computer Systems: A Programmer's Perspective. I share my 
-            structured notes and flashcards on GitHub (
-            <motion.a
-              href="https://github.com/darcyg32/effective-modern-cpp-notes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.projectLink}
-              aria-label="View Effective Modern C++ notes on GitHub (opens in new tab)"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              C++ notes
-            </motion.a>
-            ,{" "}
-            <motion.a
-              href="https://github.com/darcyg32/csapp-notes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.projectLink}
-              aria-label="View Computer Systems notes on GitHub (opens in new tab)"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              CSAPP notes
-            </motion.a>
-            ) to reinforce my understanding.
-          </motion.p>
-          <motion.div
-            className={styles.currentlyWorking}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 1.9 }}
-            whileHover={{ scale: 1.02 }}
-          >
-            <p>
-              <strong>Currently working on:</strong> Deepening my systems engineering 
-              foundations through structured study of Effective Modern C++ and Computer 
-              Systems: A Programmer's Perspective, building projects to apply what I learn.
-            </p>
-          </motion.div>
         </motion.article>
 
         <motion.div
@@ -209,7 +139,7 @@ export default function Hero() {
           variants={itemVariants}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 2.1 }}
+          transition={{ duration: 0.6, delay: 1.5 }}
         >
           <motion.a
             href="#projects"
@@ -222,6 +152,7 @@ export default function Hero() {
           >
             View my Projects
           </motion.a>
+          {/* RESUME_BUTTON - Uncomment to re-enable resume download
           <motion.a
             href="/Darcy_Geyers_Resume.pdf"
             className={styles.secondaryButton}
@@ -235,6 +166,7 @@ export default function Hero() {
           >
             Download Resume
           </motion.a>
+          */}
         </motion.div>
 
         <motion.div
@@ -242,7 +174,7 @@ export default function Hero() {
           variants={itemVariants}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 2.3 }}
+          transition={{ duration: 0.6, delay: 1.7 }}
         >
           <motion.a
             href="https://github.com/darcyg32"
@@ -280,7 +212,7 @@ export default function Hero() {
           aria-label="Scroll to About section"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 2.5 }}
+          transition={{ duration: 0.6, delay: 1.9 }}
           whileHover={{
             scale: 1.1,
             y: -5,

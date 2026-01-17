@@ -200,6 +200,7 @@ export default function Nav() {
             >
               <span className={styles.navNumber}>06.</span>Contact
             </motion.a>
+            {/* RESUME_BUTTON - Uncomment to re-enable resume button in mobile nav
             <motion.a
               href="/Darcy_Geyers_Resume.pdf"
               className={styles.resumeButton}
@@ -211,6 +212,7 @@ export default function Nav() {
             >
               Resume
             </motion.a>
+            */}
           </motion.div>
         )}
       </AnimatePresence>
@@ -264,6 +266,7 @@ export default function Nav() {
         >
           <span className={styles.navNumber}>06.</span>Contact
         </motion.a>
+        {/* RESUME_BUTTON - Uncomment to re-enable resume button in desktop nav
         <motion.a
           href="/Darcy_Geyers_Resume.pdf"
           className={styles.resumeButton}
@@ -273,6 +276,7 @@ export default function Nav() {
         >
           Resume
         </motion.a>
+        */}
       </motion.div>
     </motion.nav>
   );
