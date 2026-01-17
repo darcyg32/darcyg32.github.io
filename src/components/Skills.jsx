@@ -19,6 +19,7 @@ const skills = [
     icon: <FaCogs />,
     skills: [
       "C++23",
+      "Rust",
       "Concurrent Programming",
       "Thread Synchronization",
       "RAII & Resource Management",
@@ -34,6 +35,7 @@ const skills = [
       "C",
       "Java",
       "Python",
+      "Rust",
       "JavaScript",
       "TypeScript",
       "MATLAB",

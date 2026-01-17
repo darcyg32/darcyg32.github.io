@@ -21,6 +21,20 @@ import {
 
 const projects = [
   {
+    title: "Noise-Tolerant Grid Detector (Rust)",
+    description:
+      "A Rust image analysis tool that automatically identifies grid patterns in BMP images, extracts tile dimensions, and distinguishes between noise and multicolour patterns using statistical analysis and computer vision algorithms.",
+    skills: ["Rust", "Systems Programming", "Computer Vision"],
+    github: null,
+    live: null,
+    icon: <FaRobot />,
+    date: "Dec 2025 - Jan 2026",
+    featured: true,
+    categories: ["Systems Programming", "AI/ML"],
+    longDescription:
+      "Built a Rust image analysis tool to explore systems programming and computer vision algorithms. The detector analyzes BMP images to automatically identify grid patterns, extract tile dimensions, and distinguish between noise and multicolour patterns using statistical analysis. Implemented edge detection algorithm that accumulates colour differences across image columns, using GCD of boundary distances to robustly determine tile size even with noisy input. Designed variance-based noise detection and colour clustering system using Manhattan distance metrics to separate multicolour patterns from random pixel variation. Developed BMP parser with 4-byte row alignment handling and BGR-to-RGB conversion, ensuring accurate pixel data extraction. Created comprehensive test suite with 50+ test images covering clean, noisy, and multicolour scenarios to validate detection accuracy. Focused on fail-fast error handling with clear diagnostic messages, prioritizing reliability over guessing ambiguous configurations.",
+  },
+  {
     title: "Concurrent Task Scheduler (C++23)",
     description:
       "A modern C++23 thread-pool scheduler exploring concurrent programming and standard library synchronization primitives, distributing work across std::jthread workers with a minimal, dependency-free API.",
